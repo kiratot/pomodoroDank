@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+*,
+*::after,
+*::before {
+  // outline: 2px solid blue;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+:root {
+  --background-crayola: #adb5bd;
+  --white-cultured: #f8f9fa;
+  --raisin-black: #212529;
+  --charcoal: #495057;
+  --nickel: #6c757d;
+  --radius: 1em;
+}
+.button {
+  border: 1px solid black;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+}
+.App {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    var(--raisin-black),
+    var(--nickel)
+  );
+}
+
+.clock-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  .session-container {
+    padding: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    div:first-child {
+      background-color: var(--background-crayola);
+      border-radius: 1em;
+      padding: 2em 3em;
+      margin-bottom: 2em;
+    }
+    .clock-buttons {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  .settings-container {
+    width: 35%;
+    text-align: center;
+    padding: 1em 0.5em;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--raisin-black);
+    color: var(--white-cultured);
+    .setting-element-container {
+      padding: 0.5em 1em;
+      .setting-element-butons-container {
+        button {
+          font-weight: bold;
+          font-size: 1rem;
+        }
+        div {
+          font-weight: 600;
+          color: var(--raisin-black);
+        }
+        border-radius: 0.2em;
+        padding: 0.3em 0.5em;
+        background-color: var(--background-crayola);
+        margin-top: 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+    }
+  }
+}
