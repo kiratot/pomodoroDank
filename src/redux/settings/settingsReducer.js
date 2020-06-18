@@ -7,7 +7,6 @@ import {
   DECREMENT_BREAK_SS,
   RESET_SETTINGS,
   PLAY,
-  PAUSE,
   ON_SETTINGS,
 } from "./settingsTypes";
 

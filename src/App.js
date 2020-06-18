@@ -3,19 +3,15 @@ import "./App.scss";
 import Settings from "./components/Settings";
 import ClockDisplay from "./components/ClockDisplay";
 import { useDispatch, useSelector } from "react-redux";
-import { RESET_SETTINGS, PLAY, PAUSE } from "./redux/settings/settingsTypes";
+import { RESET_SETTINGS, PLAY } from "./redux/settings/settingsTypes";
 import snoopDog from "./audio/snoopDog.mp3";
 import HeaderFM from "./components/HeaderFM";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { MdReplay } from "react-icons/md";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 function App() {
-  const variants = {
-    visible: { opacity: 1, x: 0, rotateY: 0 },
-    hidden: { opacity: [1, 1, 0], rotateY: [90, 180, 0] },
-  };
   const onSettings = useSelector((state) => state.settings.onSettings);
   const play = useSelector((state) => state.settings.play);
   const dispatch = useDispatch();

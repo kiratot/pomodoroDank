@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   DECREMENT_SESSION_SS,
   DECREMENT_BREAK_SS,
 } from "../redux/settings/settingsTypes";
-import hereWeGoAgain from "../audio/hereWeGoAgain.mp3";
 import { motion } from "framer-motion";
 
 const ClockDisplay = ({ play }) => {
@@ -45,10 +44,10 @@ const ClockDisplay = ({ play }) => {
             ? { type: DECREMENT_SESSION_SS }
             : { type: DECREMENT_BREAK_SS }
         );
-      }, 10);
+      }, 1000);
     }
     return () => clearInterval(intervalID);
-  }, [play, onSession]);
+  }, [play, onSession, dispatch]);
 
   return (
     <motion.div animate={{ opacity: onSettings ? 0 : 1 }}>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ON_SETTINGS } from "../redux/settings/settingsTypes";
 import { AiFillGithub, AiOutlineFieldTime } from "react-icons/ai";
