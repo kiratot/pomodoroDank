@@ -19,9 +19,13 @@ const Header = () => {
         <h2>PomodoroDank</h2>
         <nav>
           <ul>
-            <li>
-              <AiFillGithub /> <span>GitHub</span>
-            </li>
+            <a href="https://github.com/kiratot/pomodoroDank">
+              <li>
+                {" "}
+                <AiFillGithub /> <span>GitHub</span>{" "}
+              </li>
+            </a>
+
             <motion.li
               initial={{ boxShadow: "0px 0px 0px black" }}
               animate={{
