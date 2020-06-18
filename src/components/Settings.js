@@ -8,11 +8,20 @@ import {
   INCREMENT_BREAK,
 } from "../redux/settings/settingsTypes";
 
+import { motion } from "framer-motion";
 const Settings = () => {
+  const onSettings = useSelector((state) => state.settings.onSettings);
   const settings = useSelector((state) => state.settings);
   const dispatch = useDispatch();
   return (
-    <div className="settings-container">
+    <motion.div
+      initial={{ opacity: 0, visibility: "hidden" }}
+      animate={{
+        opacity: onSettings ? 1 : 0,
+        visibility: onSettings ? "visible" : "hidden",
+      }}
+      className="settings-container"
+    >
       <SettingElement
         id="session-label"
         lengthId="session-length"
@@ -33,7 +42,7 @@ const Settings = () => {
         incrementDispatch={() => dispatch({ type: INCREMENT_BREAK })}
         decrementDispatch={() => dispatch({ type: DECREMENT_BREAK })}
       />
-    </div>
+    </motion.div>
   );
 };
 

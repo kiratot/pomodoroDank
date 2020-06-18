@@ -12,7 +12,7 @@ const SettingElement = ({
 }) => {
   return (
     <div className="setting-element-container">
-      <p id={id}>{name}</p>
+      <h2 id={id}>{name}</h2>
       <div className="setting-element-butons-container">
         <button id={decrementId} onClick={decrementDispatch} className="button">
           -

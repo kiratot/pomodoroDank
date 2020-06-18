@@ -8,9 +8,12 @@ import {
   RESET_SETTINGS,
   PLAY,
   PAUSE,
+  ON_SETTINGS,
 } from "./settingsTypes";
 
 const initialState = {
+  sessionReducer: 0,
+  breakReducer: 0,
   play: false,
   onBreak: false,
   onSession: true,
@@ -20,6 +23,8 @@ const initialState = {
   sessionMM: 25,
   breakSS: 0,
   breakMM: 5,
+  style: { transform: "translate(0,0)" },
+  onSettings: false,
 };
 
 const settingsReducer = (state = initialState, action) => {
@@ -69,7 +74,12 @@ const settingsReducer = (state = initialState, action) => {
         } else {
           return { ...state, sessionSS: 59, sessionMM: state.sessionMM - 1 };
         }
-      } else return { ...state, sessionSS: state.sessionSS - 1 };
+      } else
+        return {
+          ...state,
+          sessionSS: state.sessionSS - 1,
+          sessionReducer: state.sessionReducer + 1,
+        };
     case DECREMENT_BREAK_SS:
       if (state.breakSS <= 0) {
         if (state.breakMM <= 0) {
@@ -83,12 +93,28 @@ const settingsReducer = (state = initialState, action) => {
         } else {
           return { ...state, breakSS: 59, breakMM: state.breakMM - 1 };
         }
-      } else return { ...state, breakSS: state.breakSS - 1 };
+      } else
+        return {
+          ...state,
+          breakSS: state.breakSS - 1,
+          breakReducer: state.breakReducer + 1,
+        };
     case PLAY:
       return {
         ...state,
         play: !state.play,
       };
+    case ON_SETTINGS:
+      return { ...state, onSettings: !state.onSettings };
+    // return state.style.transform === "translate(0,-300%)"
+    //   ? {
+    //       ...state,
+    //       style: { ...state.style, transform: "translate(0,0)" },
+    //     }
+    //   : {
+    //       ...state,
+    //       style: { ...state.style, transform: "translate(0,-300%)" },
+    //     };
     case RESET_SETTINGS:
       return initialState;
     default:

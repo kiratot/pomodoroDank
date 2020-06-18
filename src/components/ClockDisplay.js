@@ -5,8 +5,10 @@ import {
   DECREMENT_BREAK_SS,
 } from "../redux/settings/settingsTypes";
 import hereWeGoAgain from "../audio/hereWeGoAgain.mp3";
+import { motion } from "framer-motion";
 
 const ClockDisplay = ({ play }) => {
+  const onSettings = useSelector((state) => state.settings.onSettings);
   const sessionMM = useSelector((state) => state.settings.sessionMM);
   const sessionSS = useSelector((state) => state.settings.sessionSS);
   const breakMM = useSelector((state) => state.settings.breakMM);
@@ -43,19 +45,19 @@ const ClockDisplay = ({ play }) => {
             ? { type: DECREMENT_SESSION_SS }
             : { type: DECREMENT_BREAK_SS }
         );
-      }, 1000);
+      }, 10);
     }
     return () => clearInterval(intervalID);
   }, [play, onSession]);
 
   return (
-    <div>
+    <motion.div animate={{ opacity: onSettings ? 0 : 1 }}>
       <h2 id="timer-label">{onSession ? "Session" : "Break"}</h2>
       <h2 id="time-left">{onSession ? sessionString : breakString}</h2>
       {/* <audio ref={hereWeGoAgainRef}>
         <source src={hereWeGoAgain} type="audio/mp3" />
       </audio> */}
-    </div>
+    </motion.div>
   );
 };
 

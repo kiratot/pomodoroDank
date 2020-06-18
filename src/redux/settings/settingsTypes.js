@@ -7,3 +7,4 @@ export const DECREMENT_SESSION_SS = "DECREMENT_SESSION_SS";
 export const DECREMENT_BREAK_SS = "DECREMENT_BREAK_SS";
 export const PLAY = " PLAY";
 export const PAUSE = "PAUSE";
+export const ON_SETTINGS = "ON_SETTINGS";

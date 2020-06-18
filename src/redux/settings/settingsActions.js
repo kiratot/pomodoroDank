@@ -7,6 +7,7 @@ import {
   PLAY,
   PAUSE,
   DECREMENT_SESSION_SS,
+  ON_SETTINGS,
 } from "./settingsTypes";
 
 export const incrementSession = () => {
@@ -56,8 +57,6 @@ export const play = () => {
     action: PLAY,
   };
 };
-export const pause = () => {
-  return {
-    action: PAUSE,
-  };
+export const onSettings = () => {
+  return { action: ON_SETTINGS };
 };
