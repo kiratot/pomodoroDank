@@ -49,8 +49,22 @@ const ClockDisplay = ({ play }) => {
     return () => clearInterval(intervalID);
   }, [play, onSession, dispatch]);
 
+  //uploading document title here
+  useEffect(() => {
+    onSession
+      ? document.getElementById("favicon").setAttribute("href", "clock.svg")
+      : document.getElementById("favicon").setAttribute("href", "coffee.svg");
+    document.title = onSession ? sessionString : breakString;
+  }, [onSession, sessionString, breakString]);
+
   return (
-    <motion.div animate={{ opacity: onSettings ? 0 : 1 }}>
+    <motion.div
+      initial={{ opacity: 1, visibility: "visible" }}
+      animate={{
+        opacity: onSettings ? 0 : 1,
+        visibility: onSettings ? "hidden" : "visible",
+      }}
+    >
       <h2 id="timer-label">{onSession ? "Session" : "Break"}</h2>
       <h2 id="time-left">{onSession ? sessionString : breakString}</h2>
       {/* <audio ref={hereWeGoAgainRef}>

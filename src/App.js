@@ -57,10 +57,22 @@ function App() {
             <Settings />
 
             <motion.div
-              animate={{ opacity: onSettings ? 0 : 1 }}
+              initial={{ opacity: 1 }}
+              animate={{
+                opacity: onSettings ? 0 : 1,
+                display: onSettings ? "none" : "flex",
+              }}
               className="clock-buttons"
             >
-              <button
+              <motion.button
+                initial={{
+                  type: "spring",
+                }}
+                whileTap={{
+                  scale: 1.1,
+                  backgroundColor: "#f4a261",
+                  type: "spring",
+                }}
                 id="start_stop"
                 className="button"
                 onClick={() => dispatch({ type: PLAY })}
@@ -70,11 +82,23 @@ function App() {
                 ) : (
                   <FaPlay className="fa-play" />
                 )}
-              </button>
+              </motion.button>
 
-              <button onClick={handleReset} id="reset" className="button">
+              <motion.button
+                initial={{
+                  type: "spring",
+                }}
+                whileTap={{
+                  scale: 1.1,
+                  backgroundColor: "#f4a261",
+                  type: "spring",
+                }}
+                onClick={handleReset}
+                id="reset"
+                className="button"
+              >
                 <MdReplay className="md-reset" />
-              </button>
+              </motion.button>
             </motion.div>
           </div>
         </div>

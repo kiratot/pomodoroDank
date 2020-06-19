@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 const SettingElement = ({
   id,
   name,
@@ -14,13 +14,37 @@ const SettingElement = ({
     <div className="setting-element-container">
       <h2 id={id}>{name}</h2>
       <div className="setting-element-butons-container">
-        <button id={decrementId} onClick={decrementDispatch} className="button">
+        <motion.button
+          initial={{
+            type: "spring",
+          }}
+          whileTap={{
+            scale: 1.1,
+            backgroundColor: "#f4a261",
+            type: "spring",
+          }}
+          id={decrementId}
+          onClick={decrementDispatch}
+          className="button"
+        >
           -
-        </button>
+        </motion.button>
         <div id={lengthId}>{display}</div>
-        <button id={incrementId} onClick={incrementDispatch} className="button">
+        <motion.button
+          initial={{
+            type: "spring",
+          }}
+          whileTap={{
+            scale: 1.1,
+            backgroundColor: "#f4a261",
+            type: "spring",
+          }}
+          id={incrementId}
+          onClick={incrementDispatch}
+          className="button"
+        >
           +
-        </button>
+        </motion.button>
       </div>
     </div>
   );

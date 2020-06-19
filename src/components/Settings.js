@@ -15,10 +15,10 @@ const Settings = () => {
   const dispatch = useDispatch();
   return (
     <motion.div
-      initial={{ opacity: 0, visibility: "hidden" }}
+      initial={{ opacity: 0, display: "none" }}
       animate={{
         opacity: onSettings ? 1 : 0,
-        visibility: onSettings ? "visible" : "hidden",
+        display: onSettings ? "flex" : "none",
       }}
       className="settings-container"
     >

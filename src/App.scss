@@ -4,7 +4,7 @@
 *,
 *::after,
 *::before {
-  // outline: 2px solid blue;
+  outline: none;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -22,26 +22,17 @@
   --radius: 1em;
 }
 
-li:hover {
-  transform: scale(1.05);
-  transition: 100ms ease;
-}
-
-.button {
-  transition: 100ms ease;
-  border: 1px solid #264653;
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-
 .App {
   display: grid;
   place-items: center;
-  height: 100vh;
+
+}
+
+html,
+body,
+#root,
+.app-container {
+  height: 100%;
 }
 
 .app-container {
@@ -49,6 +40,18 @@ li:hover {
   overflow: hidden;
   background: linear-gradient(120deg, var(--background-crayola), var(--nickel));
   background-color: var(--nickel);
+}
+
+li:hover {
+  background-color: var(--background-crayola);
+  transition: 300ms ease;
+}
+
+.button {
+  transition: 100ms ease;
+  border: 1px solid #264653;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
 }
 
 header {
@@ -91,7 +94,7 @@ header {
     align-items: center;
 
     h2 {
-      margin-right: 1em;
+      margin: 0 0.5em 0 0.5em;
     }
 
     nav {
@@ -117,7 +120,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: var(--background-crayola);
+
         list-style: none;
         cursor: pointer;
         border-radius: 0.2em;
@@ -128,6 +131,7 @@ header {
 }
 
 .clock-container {
+
   height: 100%;
   width: 100%;
   display: flex;
@@ -181,6 +185,14 @@ header {
       width: 100%;
       display: flex;
       justify-content: space-evenly;
+
+      button:first-child {
+        margin-right: 0.3em;
+      }
+
+      button:nth-child(2) {
+        margin-left: 0.3em;
+      }
 
       button {
         cursor: pointer;
@@ -275,19 +287,29 @@ header {
 
   .clock-container {
     max-width: 21em;
+
   }
 
   .settings-container {
     max-width: 21em;
-    max-height: 22em;
+    max-height: 2em;
+
   }
 
   .setting-element-butons-container {
     font-size: 12px;
   }
+
+  .App {
+    height: 100vh;
+  }
 }
 
 @media (min-width: 721px) {
+  .App {
+    height: 100vh;
+  }
+
   .settings-container {
     max-width: 33em;
     max-height: 25em;
