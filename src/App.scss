@@ -4,6 +4,7 @@
 *,
 *::after,
 *::before {
+  user-select: none;
   outline: none;
   box-sizing: border-box;
   padding: 0;
