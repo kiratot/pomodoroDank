@@ -19,7 +19,7 @@ const Header = () => {
         <h2>PomodoroDank</h2>
         <nav>
           <ul>
-            <a href="https://github.com/kiratot/pomodoroDank">
+            <a href="https://github.com/kiratot/pomodoroDank" target="blank">
               <li>
                 {" "}
                 <AiFillGithub /> <span>GitHub</span>{" "}
@@ -30,7 +30,7 @@ const Header = () => {
               initial={{ boxShadow: "0px 0px 0px black" }}
               animate={{
                 boxShadow: onSettings
-                  ? "0px -1px 10px black inset"
+                  ? "0px 0px 5px black inset"
                   : "0px 0px 5px black",
               }}
               onClick={() => dispatch({ type: ON_SETTINGS })}

@@ -198,10 +198,9 @@ header {
     position: absolute;
     height: 100%;
     width: 100%;
-    max-width: 33em;
-    max-height: 25em;
+
     text-align: center;
-    padding: 1em 0.5em;
+
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;
@@ -213,7 +212,7 @@ header {
       padding: 0.5em 1em;
 
       h2 {
-        font-size: 3em;
+        font-size: 2em;
         color: #f4a261;
         height: 23%;
       }
@@ -272,5 +271,26 @@ header {
         display: none;
       }
     }
+  }
+
+  .clock-container {
+    max-width: 21em;
+  }
+
+  .settings-container {
+    max-width: 21em;
+    max-height: 22em;
+  }
+
+  .setting-element-butons-container {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 721px) {
+  .settings-container {
+    max-width: 33em;
+    max-height: 25em;
+    padding: 1em 0.5em;
   }
 }
