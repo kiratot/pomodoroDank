@@ -1,5 +1,9 @@
 ## PomodoroDank ⏰ <br><br>
 
+*Whats is a pomodoro clock ?* <br>
+A pomodoro clock is a timer that helps you get your work done using the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique).
+
+
 ### Hot to use: 
 
 1. Start timer and focus on the task for 25 minutes <br>
