@@ -3,7 +3,7 @@
 ## Hot to use: 
 
 Start timer and focus on the task for 25 minutes
-Take a break for 5 minutes when the **** snoop dog music hits ****
+Take a break for 5 minutes when the *snoop dog music hits*
 Iterate 3-5 until you finish the tasks
 
 ## Features: 
